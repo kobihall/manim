@@ -30,7 +30,7 @@ class Mobject(Container):
     Mathematical Object
     """
     CONFIG = {
-        "color": WHITE,
+        "color": None,
         "name": None,
         "dim": 3,
         "target": None,
@@ -39,10 +39,15 @@ class Mobject(Container):
     def __init__(self, **kwargs):
         Container.__init__(self, **kwargs)
         self.submobjects = []
+        if self.color is None:
+            self.color = WHITE
         self.color = Color(self.color)
         if self.name is None:
             self.name = self.__class__.__name__
-        self.updaters = []
+        try:
+            self.updaters == []
+        except AttributeError:
+            self.updaters = []
         self.updating_suspended = False
         self.reset_points()
         self.generate_points()

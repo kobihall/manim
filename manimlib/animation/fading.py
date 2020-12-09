@@ -1,6 +1,7 @@
 from manimlib.animation.animation import Animation
 from manimlib.animation.animation import DEFAULT_ANIMATION_LAG_RATIO
 from manimlib.animation.transform import Transform
+from manimlib.animation.transform import ReplacementTransform
 from manimlib.constants import DOWN
 from manimlib.mobject.types.vectorized_mobject import VMobject
 from manimlib.utils.bezier import interpolate
@@ -25,6 +26,36 @@ class FadeOut(Transform):
 
 
 class FadeIn(Transform):
+    CONFIG = {
+        "lag_ratio": DEFAULT_FADE_LAG_RATIO,
+    }
+
+    def create_target(self):
+        return self.mobject
+
+    def create_starting_mobject(self):
+        start = super().create_starting_mobject()
+        start.fade(1)
+        if isinstance(start, VMobject):
+            start.set_stroke(width=0)
+            start.set_fill(opacity=0)
+        return start
+
+class ReplacementFadeOut(ReplacementTransform):
+    CONFIG = {
+        "remover": True,
+        "lag_ratio": DEFAULT_FADE_LAG_RATIO,
+    }
+
+    def create_target(self):
+        return self.mobject.copy().fade(1)
+
+    def clean_up_from_scene(self, scene=None):
+        super().clean_up_from_scene(scene)
+        self.interpolate(0)
+
+
+class ReplacementFadeIn(ReplacementTransform):
     CONFIG = {
         "lag_ratio": DEFAULT_FADE_LAG_RATIO,
     }

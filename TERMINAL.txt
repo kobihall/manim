@@ -1,0 +1,7 @@
+cd documents/manim
+
+python3 manim.py example_scenes.py SquareToCircle -pl
+
+python3 manim.py from_3b1b/active/diffyq/example_scenes.py SquareToCircle -pl
+
+python3 manim.py thesis/example_scenes.py TitleSlide -pl

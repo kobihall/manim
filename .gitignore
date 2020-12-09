@@ -16,6 +16,7 @@ ben_cairo_test.py
 .vs
 *.xml
 *.iml
+*.mp4
 media
 manim.sublime-project
 manim.sublime-workspace

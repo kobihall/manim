@@ -1,5 +1,5 @@
 """
-I won't pretend like this is best practice, but in creating animations for a video,
+I won't pretend like this is best practice, by in creating animations for a video,
 it can be very nice to simply have all of the Mobjects, Animations, Scenes, etc.
 of manim available without having to worry about what namespace they come from.
 
@@ -50,7 +50,6 @@ from manimlib.mobject.svg.drawings import *
 from manimlib.mobject.svg.svg_mobject import *
 from manimlib.mobject.svg.tex_mobject import *
 from manimlib.mobject.svg.text_mobject import *
-from manimlib.mobject.svg.code_mobject import *
 from manimlib.mobject.three_d_utils import *
 from manimlib.mobject.three_dimensions import *
 from manimlib.mobject.types.image_mobject import *

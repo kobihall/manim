@@ -17,9 +17,33 @@
 \usepackage{physics}
 \usepackage{xcolor}
 \usepackage{microtype}
+\usepackage{cancel}
 \DisableLigatures{encoding = *, family = * }
 %\usepackage[UTF8]{ctex}
 \linespread{1}
+
+% For derivatives
+\newcommand{\deriv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial {#2}}}
+
+% MZ CMA specific definitions
+\def\L{\mathcal{L}}
+\let\oldu\u
+\def\u{\mathbf{u}}
+\newcommand{\uk}{u_k}
+\newcommand{\ut}{\tilde{\mathbf{u}}}
+\newcommand{\utk}{\tilde{u}_k}
+\newcommand{\uh}{\hat{\mathbf{u}}}
+\newcommand{\uhk}{\hat{u}_k}
+\newcommand{\Ch}{\hat{\mathbf{C}}}
+\newcommand{\Chk}{\hat{C}_k}
+\newcommand{\Ct}{\tilde{\mathbf{C}}}
+\newcommand{\Ctk}{\tilde{C}_k}
+
+% Differential
+\newcommand*\diff{\mathop{}\mathrm{d}}
 
 \begin{document}
 
